@@ -1,11 +1,24 @@
-const moment  = require('moment')
-const timer = require("moment-timer")
+// Set the time limit in minutes
+var timeLimit = 45;
 
-let minutes = 30
+// Convert minutes to seconds
+var timeInSeconds = timeLimit * 60;
 
-var time = moment.duration(minutes, "seconds").timer({loop: true}, function() {
-    
-    // Callback
-});
+// Update the timer every second
+var countdown = setInterval(function() {
+  // Calculate minutes and seconds
+  var minutes = Math.floor(timeInSeconds / 60);
+  var seconds = timeInSeconds - (minutes * 60);
 
-console.log(time)
+  // Display the time in minutes and seconds
+  console.log(minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+
+  // Decrement time by one second
+  timeInSeconds--;
+
+  // Check if time has run out
+  if (timeInSeconds < 0) {
+    clearInterval(countdown);
+    console.log("Time's up!");
+  }
+}, 1000);
