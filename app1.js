@@ -1,16 +1,3 @@
-
-
-
-// Get minute space. 
-//const minSpace = document.querySelector('div#container main.main div#maintimer span.minute');
-
-// Get second space. 
-//const secSpace = document.querySelector('div#container main.main div#maintimer span.second');
-
-// Get millisecond space. 
-const timerElement = document.querySelector('div#container main.main div#maintimer span.millisecond')
-
-
 // Set the time limit in minutes
 var timeLimit = 45;
 
@@ -18,7 +5,7 @@ var timeLimit = 45;
 var timeInSeconds = timeLimit * 60;
 
 // Get the timer element from the HTML
-//var timerElement = document.getElementById('timer');
+var timerElement = document.getElementById('timer');
 
 // Update the timer every second
 var countdown = setInterval(function() {
