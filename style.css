@@ -24,6 +24,11 @@ main{
 .caption2{
   width: 50%;
   float: left;
+  background-color: red;
+}
+
+.itempause2{
+  background-color: red;
 }
 
 
