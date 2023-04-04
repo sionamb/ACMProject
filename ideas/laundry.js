@@ -11,24 +11,48 @@
 const timerElement = document.querySelector('div#container main.main div#maintimer span.millisecond')
 
 let flag = false
+let Gminutes = 0
+let Gseconds = 0
+
+
 
 function startTimer(){
-  // Set the time limit in minutes
-  var timeLimit = 45;
+  flag = false
 
+  
+  let timeLimit = 0
+  let timeInSeconds = 0
+
+  if(Gminutes === 0 && Gseconds === 0)
+    {timeLimit = 45;
+    timeInSeconds = timeLimit * 60;
+  }
+  else {
+    timeLimit = Gminutes
+    timeInSeconds = Gseconds
+    
+  }
+    
+    
+
+
+  // Set the time limit in minutes
+  
   // Convert minutes to seconds
-  var timeInSeconds = timeLimit * 60;
+  
 
   // Get the timer element from the HTML
   //var timerElement = document.getElementById('timer');
-
   
   // Update the timer every second
   var countdown = setInterval(function() {
     if(!flag){
       // Calculate minutes and seconds
       var minutes = Math.floor(timeInSeconds / 60);
+      Gminutes = minutes
+      console.log(minutes)
       var seconds = timeInSeconds - (minutes * 60);
+      Gseconds = seconds
 
       // Display the time in minutes and seconds
       timerElement.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
@@ -45,6 +69,7 @@ function startTimer(){
 
   }, 1000);
 }
+
 
 
 function pauseTimer(){
