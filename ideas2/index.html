@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script defer src="./laundry.js" type="text/javascript"></script>-->
+    		<!-- <link href="./laundry.css" rel="stylesheet" type="text/css"/> -->
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;300;400;500;600&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Nova+Square:wght@100;300;400;500;600&display=swap');
+			/* @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap'); */
+
+
+			* {box-sizing:border-box; /* padding:0; margin:0; */}
+
+
+			:root {
+
+				/* Theme Colors */
+				--cyan:#17D4E9;
+				--darkcyan:#01909D;
+				--lightcyan:#6EE4EF;
+				
+				/* Gradient Background Image */
+				/* --bgimg:linear-gradient(135deg,dodgerblue,white,wheat); */
+
+				/* Page Sizes */
+				--pagewidth:60rem;
+				--cornersize:.5rem;
+				
+				/* Box Shadows */
+				--boxshadow:0 0 1rem 0 #0002;
+				--boxshadow:0 0 .25rem 0 #0003;
+			}
+
+			body {
+
+				--backcolor:white;
+				--backcolor:var(--lightcyan);
+				--forecolor:black;
+			}
+
+			/* body.dark {
+
+				--backcolor:black;
+				--forecolor:white;
+			} */
+
+
+			/* html {background-image:var(--bgimg);} */
+			body {background-color:var(--backcolor); color:var(--forecolor); font-family:Nunito,sans-serif; margin:0;}
+			/* .freeze {overflow:hidden;} */
+
+
+			div#container {background-color:var(--backcolor); color:var(--forecolor); display:grid; place-items:center; min-height:100vh; padding:1rem;}
+			
+			div#container nav.navbar {position:absolute; top:0; right:0; left:0; width:100%;}
+			div#container nav.navbar {background-color:white; min-height:4rem; box-shadow:var(--boxshadow);}
+			
+			div#container main.main {background-color:white; display:flex; flex-direction:column; align-items:stretch; /* width:100%; max-width:var(--pagewidth); */ padding:1.25rem; border-radius:var(--cornersize); box-shadow:var(--boxshadow);}
+			div#container main.main div#maintimer {color:var(--darkcyan); font-family:'Nova Square','Courier New', Courier, monospace; font-size:6rem; text-align:center;}
+			div#container main.main div#maintimer {display:flex; flex-direction:row; justify-content:center; align-items:center; cursor:pointer; user-select:none; min-width:40rem;}
+			div#container main.main div#maintimer span {}
+			/*
+            div#container main.main div#maintimer span.colon {transform:translateY(-.125em);} */
+			div#container main.main div#maintimer span.minute {}
+			div#container main.main div#maintimer span.second {}
+			div#container main.main div#maintimer span.millisecond {}
+			div#container main.main a.item {background-color:var(--cyan); color:white; font-size:2rem; text-transform:uppercase; text-decoration:none;}
+			div#container main.main a.item {display:flex; flex-direction:row; justify-content:center; align-items:center; padding:1rem; border-radius:.5rem; margin-top:1rem;}
+			div#container main.main a.item.start {text-transform:uppercase;}
+			/* div#container main.main a.item svg.icon {margin-right:.375rem;} */
+			div#container main.main a.item span.caption {margin-left:.375rem;}
+
+			
+			/* Tablet Screen */
+			@media screen and (max-width:64rem) {
+				/*  */
+			}
+			
+			/* Big Smartphone Screen */
+			@media screen and (max-width:48rem) {
+				/*  */
+			}
+			
+			/* Small Smartphone Screen */
+			@media screen and (max-width:32rem) {
+				/*  */
+			}
+            /* Added */
+            #maintimer{
+                text-align:center
+            }
+
+		</style>
+</head>
+<body>
+    <form id="maintimer" action="">
+        <div><span class="minute"></span><span class="colon">:</span><span class="second"></span></div>
+        <div><input type="button" id="btnStart" value="START"></div>
+        <div><input type="button" id="btnStop" value="STOP"></div>
+        <div><input type="button" id="btnReset" value="RESET"></div>
+        <div><input type="button" id="btnWasher" value="WASHER"></div>
+        <div><input type="button" id="btnDryer" value="DRYER"></div>
+        <div>
+            <input type="button" id="btnMinus" value="-5">
+            <input type="button" id="btnPlus" value="+5">
+        </div>
+
+        <!--Included only to test edge cases-->
+        <div><input type="button" id="setZero" value="0"></div>    
+        <div><input type="button" id="setMax" value="max"></div>
+    </form>
+    		<!-- Main Script -->
+		<script src="./laundry.js" type="text/javascript"></script>
+		<script type="text/javascript"></script>
+        
+</body>
+</html>
